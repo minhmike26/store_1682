@@ -8,9 +8,30 @@ const Topbar = () => {
     <div className="bg-red-500 text-white">
       <div className="container mx-auto flex justify-center items-center py-3 px-4 md:grid md:grid-cols-3">
         <div className="hidden md:flex items-center space-x-4">
-          <TbBrandMeta className="h-5 w-5" />
-          <IoLogoInstagram className="h-5 w-5" />
-          <RiTiktokFill className="h-4 w-5" />
+        <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-500"
+            >
+              <TbBrandMeta className="h-5 w-5"/>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-500"
+            >
+              <IoLogoInstagram className="h-5 w-5"/>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-500"
+            >
+              <RiTiktokFill className="h-5 w-5"/>
+            </a>
         </div>
         <div className="text-sm text-center">
           <span>We Ship Fast and Reliable - Order Now!</span>

@@ -92,7 +92,7 @@ const Footer = () => {
               <TbBrandMeta className="h-5 w-5"/>
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-500"
@@ -100,7 +100,7 @@ const Footer = () => {
               <IoLogoInstagram className="h-5 w-5"/>
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.tiktok.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-500"
