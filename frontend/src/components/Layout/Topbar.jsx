@@ -3,6 +3,8 @@ import { TbBrandMeta } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiTiktokFill } from "react-icons/ri";
 
+
+//Hiển thị icon thông tin liên hệ: Mạng xã hội, số điện thoại
 const Topbar = () => {
   return (
     <div className="bg-red-500 text-white">

@@ -2,13 +2,22 @@ import React, { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
+// Component NewArrivals là một slider ngang để hiển thị các sản phẩm mới.
+// dùng useRef để thao tác với thẻ scroll, và các useState để theo dõi trạng thái kéo, vị trí cuộn.
 const NewArrivals = () => {
+  // scrollRef: thẻ scroll
   const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  // isDragging: Trạng thái kéo thả
+  const [isDragging, setIsDragging] = useState(false); // Trạng thái kéo thả
+  // startX: Vị trí bắt đầu kéo
+  const [startX, setStartX] = useState(0); // Vị trí bắt đầu kéro
+  // scrollLeft: Vị trí scroll
+  const [scrollLeft, setScrollLeft] = useState(false); // Vị trí scroll
+  // canScrollRight: Trạng thái scroll right
+  const [canScrollRight, setCanScrollRight] = useState(true); // Trạng thái scroll right
+  // canScrollLeft: Trạng thái scroll left
+  const [canScrollLeft, setCanScrollLeft] = useState(false); // Trạng thái scroll left
+  // Danh sách sản phẩm mới
   const newArrivals = [
     {
       _id: "1",
@@ -78,44 +87,44 @@ const NewArrivals = () => {
     },
   ];
 
+  // Xử lý kéo thả
   const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
+    setIsDragging(true); // Khi bắt đầu kéo
+    setStartX(e.pageX - scrollRef.current.offsetLeft); // Vị trí bắt đầu kéo
+    setScrollLeft(scrollRef.current.scrollLeft); // Vị trí scroll
   };
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = x - startX;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
+    if (!isDragging) return; // Nếu không kéo thì không làm gì
+    const x = e.pageX - scrollRef.current.offsetLeft; // Vị trí kéo
+    const walk = x - startX; // Khoảng cách kéo
+    scrollRef.current.scrollLeft = scrollLeft - walk; // Vị trí scroll
   };
 
   const handleMouseUpOrLeave = () => {
-    setIsDragging(false);
+    setIsDragging(false); // Kết thúc kéo thả
   };
 
   const scroll = (direction) => {
-    const scrollAmount = direction === "left" ? -300 : 300;
+    const scrollAmount = direction === "left" ? -300 : 300; // Xác định hướng và khoảng cách
     scrollRef.current.scrollBy({ left: scrollAmount, behaviour: "smooth" });
   };
 
   const updateScrollButtons = () => {
-    const container = scrollRef.current;
+    const container = scrollRef.current; // Container scroll
     if (container) {
-      const leftScroll = container.scrollLeft;
+      const leftScroll = container.scrollLeft; // Vị trí scroll left
       const rightScrollable =
-        container.scrollWidth > leftScroll + container.clientWidth;
-
-      setCanScrollLeft(leftScroll > 0);
-      setCanScrollRight(rightScrollable);
+        container.scrollWidth > leftScroll + container.clientWidth; // Trạng thái scroll right
+      setCanScrollLeft(leftScroll > 0); // Có thể cuộn trái nếu scrollLeft > 0
+      setCanScrollRight(rightScrollable); // Có thể cuộn phải nếu còn dư nội dung
     }
   };
   useEffect(() => {
-    const container = scrollRef.current;
+    const container = scrollRef.current; // Container scroll
     if (container) {
-      container.addEventListener("scroll", updateScrollButtons);
-      updateScrollButtons();
-      return () => container.removeEventListener("scroll", updateScrollButtons);
+      container.addEventListener("scroll", updateScrollButtons); // Thêm event scroll
+      updateScrollButtons(); // Gọi lần đầu để cập nhật trạng thái nút
+      return () => container.removeEventListener("scroll", updateScrollButtons); // Xóa event scroll khi component unmount
     }
   }, []);
 

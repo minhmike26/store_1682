@@ -10,17 +10,20 @@ import CartDrawer from "../Layout/CartDrawer";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
+//Quản lý 2 drawer:
 const Navbar = () => {
+  //drawerOpen: Mở/đóng cart drawer
   const [drawerOpen, setDrawerOpen] = useState(false);
+  //navDrawerOpen: Mở/đóng nav drawer
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+  //toggleNavDrawer: Chuyển đổi trạng thái nav drawer
   const toggleNavDrawer = () => {
     setNavDrawerOpen(!navDrawerOpen);
   };
-
+  //toggleCartDrawer: Chuyển đổi trạng thái cart drawer
   const toggleCartDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
-
   return (
     <>
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 md:grid md:grid-cols-3">
@@ -72,7 +75,6 @@ const Navbar = () => {
           <div className="overflow-hidden">
             <SearchBar />
           </div>
-
           <button onClick={toggleNavDrawer} className="md:hidden">
             <HiBars3BottomRight className="h-6 w-6 text-gray-700" />
           </button>

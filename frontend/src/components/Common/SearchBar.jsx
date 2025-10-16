@@ -1,17 +1,25 @@
 import React from "react";
 import { HiMagnifyingGlass, HiMiniXMark } from "react-icons/hi2";
 import { useState } from "react";
+
+//Tìm kiếm có 2 trạng thái:
+// Đóng: Chỉ hiển thị icon search
+// Mở: Hiển thị form tìm kiếm
 const SearchBar = () => {
+  //searchTerm: Từ khóa tìm kiếm
   const [searchTerm, setSearchTerm] = useState("");
+  //isOpen: Trạng thái tìm kiếm mặc định là đóng
   const [isOpen, setIsOpen] = useState(false);
+  //handleSearchToggle: Chuyển đổi trạng thái tìm kiếm (đóng/mở)
   const handleSearchToggle = () => {
     setIsOpen(!isOpen);
   };
 
+  //handleSearch: Xử lý tìm kiếm
   const handleSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Ngăn chặn reload trang khi submit
     console.log("Search Term", searchTerm);
-    setIsOpen(false);
+    setIsOpen(false); // tự động đóng form
   };
   return (
     <div

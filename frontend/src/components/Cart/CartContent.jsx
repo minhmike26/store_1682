@@ -1,7 +1,12 @@
 import React from "react";
 import { RiDeleteBin3Line } from "react-icons/ri";
 
+//CartContent component
+//Hiển thị danh sách sản phẩm trong giỏ hàng
+//cartProducts: Danh sách sản phẩm trong giỏ hàng
+//Hàm return: Hiển thị danh sách sản phẩm trong giỏ hàng
 const CartContent = () => {
+  //cartProducts: Danh sách sản phẩm trong giỏ hàng
   const cartProducts = [
     {
       productId: 1,
