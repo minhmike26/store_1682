@@ -34,28 +34,28 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex justify-center space-x-5">
           <Link
-            to="#"
+            to="/collections/protein"
             className="text-gray-700 hover:text-black text-sm font-medium uppercase"
           >
-            Men
+            Protein
           </Link>
           <Link
-            to="#"
+            to="/collections/pre-workout"
             className="text-gray-700 hover:text-black text-sm font-medium uppercase"
           >
-            Women
+            Pre-Workout
           </Link>
           <Link
-            to="#"
+            to="/collections/creatine"
             className="text-gray-700 hover:text-black text-sm font-medium uppercase"
           >
-            Energy
+            Creatine
           </Link>
           <Link
-            to="#"
+            to="/collections/vitamins"
             className="text-gray-700 hover:text-black text-sm font-medium uppercase"
           >
-            Others
+            Vitamins
           </Link>
         </div>
         <div className="flex items-center justify-end space-x-4">
@@ -96,32 +96,32 @@ const Navbar = () => {
           <h2 className="text-xl font-semibold mb-4">Menu</h2>
           <nav className="space-y-4">
             <Link
-              to="#"
+              to="/collections/protein"
               onClick={toggleNavDrawer}
               className="block text-gray-600 hover:text-black"
             >
-              Men
+              Protein
             </Link>
             <Link
-              to="#"
+              to="/collections/pre-workout"
               onClick={toggleNavDrawer}
               className="block text-gray-600 hover:text-black"
             >
-              Women
+              Pre-Workout
             </Link>
             <Link
-              to="#"
+              to="/collections/creatine"
               onClick={toggleNavDrawer}
               className="block text-gray-600 hover:text-black"
             >
-              Energy
+              Creatine
             </Link>
             <Link
-              to="#"
+              to="/collections/vitamins"
               onClick={toggleNavDrawer}
               className="block text-gray-600 hover:text-black"
             >
-              Others
+              Vitamins
             </Link>
           </nav>
         </div>
