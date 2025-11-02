@@ -40,7 +40,7 @@ const ProductGrid = ({ products }) => {
 
           {/* Product Info */}
           <div className="p-4">
-            <Link to={`/product/${product._id}`} className="block">
+            <Link to={`/products/${product._id}`} className="block">
               <h3 className="text-lg font-semibold mb-2 text-gray-900 hover:text-gray-600 transition-colors">
                 {product.name}
               </h3>

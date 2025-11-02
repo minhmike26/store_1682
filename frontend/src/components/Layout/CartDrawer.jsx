@@ -1,11 +1,20 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 import CartContent from "../Cart/CartContent";
+import { useNavigate } from "react-router-dom";
+import Checkout from "../Cart/Checkout";
 
 //CartDrawer component
 const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
   //drawerOpen: Trạng thái mở/đóng giỏ hàng
   //toggleCartDrawer: Chuyển đổi trạng thái giỏ hàng
+
+  const navigate = useNavigate();
+  //handleCheckout: Chuyển đổi trạng thái giỏ hàng
+  const handleCheckout = () => {
+    toggleCartDrawer();
+    navigate("/checkout");
+  };
   //Hàm return: Hiển thị giỏ hàng
   return (
     <div
@@ -25,11 +34,14 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
         <CartContent />
       </div>
       <div className="p-4 bg-white sticky bottom-0">
-        <button className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+        <button
+          onClick={handleCheckout}
+          className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+        >
           Checkout
         </button>
         <p className="text-sm tracking-tighter text-gray-500 mt-2 text-center">
-          shipping, discount
+          Shipping,taxes and discounts will be calculated at checkout
         </p>
       </div>
     </div>
