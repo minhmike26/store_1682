@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
       const mockOrders = [
@@ -37,6 +38,10 @@ const MyOrdersPage = () => {
     }, 1000);
   }, []);
 
+  const handleRowClick = (orderId) => {
+    navigate(`/order/${orderId}`);
+  };
+
   return (
     <div className="max-w-7xl mx-auto p-4 sm:p-6">
       <h2 className="text-xl md:text-2xl font-bold mb-6">My Orders</h2>
@@ -58,6 +63,7 @@ const MyOrdersPage = () => {
               orders.map((order) => (
                 <tr
                   key={order._id}
+                  onClick={() => handleRowClick(order._id)}
                   className="border-b hover:border-gray-50 cursor-pointer"
                 >
                   <td className="px-2 py-2 sm:px-4 sm:py-4">
