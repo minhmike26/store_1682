@@ -73,8 +73,8 @@ const ProductManagement = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="p-4 text-center">
-                  No products found
+                <td colSpan={4} className="p-4 text-center text-gray-500">
+                  No products found.
                 </td>
               </tr>
             )}

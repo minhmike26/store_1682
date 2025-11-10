@@ -18,6 +18,8 @@ import AdminHomePage from "./pages/AdminHomePage";
 import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import EditProductPage from "./components/Admin/EditProductPage";
+import AddProductPage from "./components/Admin/AddProductPage";
+import OrderManagement from "./components/Admin/OrderManagement";
 //App.jsx - Component chính của ứng dụng
 //Logic: Đây là component gốc của ứng dụng, sử dụng React Router để:
 //Tạo routing system với BrowserRouter
@@ -54,6 +56,8 @@ const App = () => {
           <Route path="users" element={<UserManagement />} />
           <Route path="products" element={<ProductManagement />} />
           <Route path="products/:id/edit" element={<EditProductPage />} />
+          <Route path="products/add" element={<AddProductPage />} />
+          <Route path="orders" element={<OrderManagement />} />
         </Route>
       </Routes>
     </BrowserRouter>
