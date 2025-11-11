@@ -41,7 +41,7 @@ const EditProductPage = () => {
       <form onSubmit={handleSubmit}>
         {/* Name */}
         <div className="mb-6">
-          <label className="block font-semibold mb-2">ProductName</label>
+          <label className="block font-semibold mb-2">Product Name</label>
           <input
             type="text"
             name="name"
