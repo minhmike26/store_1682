@@ -73,7 +73,7 @@ const OrderDetailsPage = () => {
                     : "bg-yellow-100 text-yellow-700"
                 } px-3 py-1 rounded-full text-sm font-medium mb-2`}
               >
-                {orderDetails.isDelivered ? "Delivered" : "Pending"}
+                {orderDetails.isDelivered ? "Delivered" : "Processing"}
               </span>
             </div>
           </div>
@@ -92,7 +92,7 @@ const OrderDetailsPage = () => {
                 {`${orderDetails.shippingAddress.address}, ${orderDetails.shippingAddress.city}, ${orderDetails.shippingAddress.country}`}
               </p>
               <p>
-                Status: {orderDetails.isDelivered ? "Delivered" : "Pending"}
+                Status: {orderDetails.isDelivered ? "Delivered" : "Processing"}
               </p>
             </div>
           </div>

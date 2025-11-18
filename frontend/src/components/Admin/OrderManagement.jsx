@@ -9,7 +9,7 @@ const OrderManagement = () => {
         name: "John Doe",
       },
       totalPrice: 100,
-      status: "Pending",
+      status: "Processing",
     },
     {
       _id: "2",
@@ -17,7 +17,7 @@ const OrderManagement = () => {
         name: "Jane Doe",
       },
       totalPrice: 200,
-      status: "Delivered",
+      status: "Shipped",
     },
   ];
   const handleStatusChange = (orderId, status) => {
@@ -58,7 +58,7 @@ const OrderManagement = () => {
                       }
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                     >
-                      <option value="Pending">Pending</option>
+                      <option value="Processing">Processing</option>
                       <option value="Shipped">Shipped</option>
                       <option value="Delivered">Delivered</option>
                       <option value="Cancelled">Cancelled</option>
